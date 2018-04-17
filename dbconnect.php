@@ -6,7 +6,7 @@
  * Time: 18:12
  */
 define('DB_SERVER', 'cm4025-wizard.mysql.database.azure.com');
-define('DB_USERNAME', 'admin');
+define('DB_USERNAME', 'admindb');
 define('DB_PASSWORD', 'Admin_123');
 define('DB_DATABASE', 'mysql');
 
