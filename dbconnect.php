@@ -11,3 +11,7 @@ define('DB_PASSWORD', 'Admin_123');
 define('DB_DATABASE', 'mysql');
 
 $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+if($db->connect_errno){
+    die('Connect Failed ['.$db->connect_errno.']');
+}
