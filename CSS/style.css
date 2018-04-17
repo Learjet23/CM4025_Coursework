@@ -4,18 +4,22 @@
 }
 
 #container{
-
+    overflow: hidden;
 }
 
 #navigation{
     background-color: black ;
     width: 180px;
     float: left;
+    margin-bottom: -32767px;
+    padding-bottom: 32767px;
 }
 
 #content{
     background-color: #c4c4c4;
     width: 620px;
+    margin-bottom: -32767px;
+    padding-bottom: 32767px;
 }
 
 #footer{
