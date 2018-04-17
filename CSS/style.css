@@ -1,0 +1,24 @@
+#header{
+    background-color: dimgrey;
+    width: 800px;
+}
+
+#container{
+
+}
+
+#navigation{
+    background-color: black ;
+    width: 180px;
+    float: left;
+}
+
+#content{
+    background-color: #c4c4c4;
+    width: 620px;
+}
+
+#footer{
+    background-color: dimgrey;
+    width: 800px;
+}
