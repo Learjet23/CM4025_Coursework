@@ -6,6 +6,7 @@
  * Time: 12:35
  */
 
+echo "sup yo";
 include ("dbconnect.php");
 
 if ($db->connect_error) {
