@@ -6,7 +6,7 @@
  * Time: 18:12
  */
 $host = 'cm4025-wizard.mysql.database.azure.com';
-$user = 'admindb';
+$user = 'admindb@cm4025-wizard';
 $pwd = 'Admin_123';
 $data = 'wizard';
 
