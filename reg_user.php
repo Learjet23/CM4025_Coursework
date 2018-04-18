@@ -38,7 +38,7 @@ if(isset($_POST['reg_user'])){
     //Register user
     if(count($errors) == 0){
         $password = md5($password);
-        $sql = "INSERT INTO user (username, password) VALUES ('scott', 'pwd')";
+        $sql = "INSERT INTO user (username, password) VALUES ('$username', '$password')";
         mysqli_query($db, $sql);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are logged in";
