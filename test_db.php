@@ -20,3 +20,5 @@ if ($db->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+$db->close();
