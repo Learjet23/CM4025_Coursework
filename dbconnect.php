@@ -15,4 +15,4 @@ $db = mysqli_connect($host, $user, $pwd, $data);
 if ($db->connect_error) {
     echo "broken yo";
     die("Connection failed: " . $db->connect_error);
-}
+}else{echo "working";}
