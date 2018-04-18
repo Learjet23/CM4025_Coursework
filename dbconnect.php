@@ -11,3 +11,7 @@ $pwd = 'Admin_123';
 $data = 'wizard';
 
 $db = mysqli_connect($host, $user, $pwd, $data);
+
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
