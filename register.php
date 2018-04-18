@@ -11,7 +11,7 @@ include ("reg_user.php");
 <html>
 <head>
     <title>Wizard Duels - Register</title>
-    <link href="/CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="/CSS/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="Register">

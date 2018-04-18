@@ -10,8 +10,6 @@ include ("dbconnect.php");
 
 session_start();
 
-echo "\nbefore query";
-
 $username = "";
 $password = "";
 $errors = array();
