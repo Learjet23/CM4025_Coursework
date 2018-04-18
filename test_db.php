@@ -14,7 +14,7 @@ $sql = "INSERT INTO user (username, password) VALUES ('scott', 'pwd')";
 
 echo "\nbefore executing query";
 
-if ($db->query($sql) === TRUE) {
+if (mysqli_query($db, $sql)) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $db->error;
