@@ -48,3 +48,12 @@ body{
     font-size: 12pt;
     border: 1px solid #000000;
 }
+
+.content {
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
