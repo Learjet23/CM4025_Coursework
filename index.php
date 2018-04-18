@@ -49,6 +49,6 @@ if (isset($_GET['logout'])) {
         <div id="navigation">2<br /> <br /></div>
         <div id="content">3<br /> <br /> <br /></div>
     </div>
-<div id="footer">4</div>
+<div id="footer">&copy; Wizard Duel 2018: A Scott Learmonth Game</div>
 </body>
 </html>
