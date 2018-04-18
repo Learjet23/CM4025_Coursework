@@ -8,6 +8,7 @@
 
 include ("dbconnect.php");
 
-$query = "INSERT INTO 'user' ('username', 'password') VALUES ('scott', 'password')";
-
-$result = mysqli_query($db, $query);
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+echo "Connected successfully";
