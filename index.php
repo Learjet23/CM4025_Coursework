@@ -22,6 +22,7 @@ if (isset($_GET['logout'])) {
 <head>
     <title>Wizard Duels</title>
     <link href="/CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="/CSS/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="content">
