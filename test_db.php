@@ -6,12 +6,9 @@
  * Time: 12:35
  */
 
-echo "sup yo";
 include ("dbconnect.php");
 
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-}
+echo "sup yo";
 
 $sql = "INSERT INTO 'user' ('username', 'password') VALUES ('scott', 'pwd')";
 
