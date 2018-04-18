@@ -19,5 +19,7 @@ if (isset($_GET['logout'])) {
 }
 
 include ('header.php');
+
 echo "hello world";
+
 include ("footer.php");
