@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
         <?php endif ?>
     </div>
 
-    //Game box
+    <!--Game box-->
     <div id="header">Wizard Duel</div>
     <div id="container">
         <div id="navigation"><div id="nav_div"></div>2<br /> <br /></div>
