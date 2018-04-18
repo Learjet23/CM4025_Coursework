@@ -8,10 +8,6 @@
 define('DB_SERVER', 'cm4025-wizard.mysql.database.azure.com');
 define('DB_USERNAME', 'admindb');
 define('DB_PASSWORD', 'Admin_123');
-define('DB_DATABASE', 'mysql');
+define('DB_DATABASE', 'wizard');
 
 $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-
-if($db->connect_errno){
-    die('Connect Failed ['.$db->connect_errno.']');
-}
