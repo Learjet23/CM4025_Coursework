@@ -44,6 +44,8 @@ if (isset($_GET['logout'])) {
             <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
         <?php endif ?>
     </div>
+
+    //Game box
     <div id="header">Wizard Duel</div>
     <div id="container">
         <div id="navigation"><div id="nav_div"></div>2<br /> <br /></div>
