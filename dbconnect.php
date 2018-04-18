@@ -6,11 +6,11 @@
  * Time: 18:12
  */
 $host = 'cm4025-wizard.mysql.database.azure.com';
-$user = 'admindb@cm4025-wizard';
+$usr = 'admindb@cm4025-wizard';
 $pwd = 'Admin_123';
 $data = 'wizard';
 
-$db = mysqli_connect($host, $user, $pwd, $data);
+$db = mysqli_connect($host, $usr, $pwd, $data);
 
 if (!$db) {
     echo "\ndb failed to connect";
