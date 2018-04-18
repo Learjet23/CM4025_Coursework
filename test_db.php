@@ -17,7 +17,7 @@ $sql = "INSERT INTO 'user' ('username', 'password') VALUES ('scott', 'pwd')";
 if ($db->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $db->error;
 }
 
 $db->close();
