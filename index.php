@@ -44,10 +44,10 @@ if (isset($_GET['logout'])) {
             <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
         <?php endif ?>
     </div>
-    <div id="header">1</div>
+    <div id="header">Wizard Duel</div>
     <div id="container">
-        <div id="navigation">2<br /> <br /></div>
-        <div id="content">3<br /> <br /> <br /></div>
+        <div id="navigation"><div id="nav_div"></div>2<br /> <br /></div>
+        <div id="content"><div id="con_div">3</div><br /> <br /> <br /></div>
     </div>
     <div id="footer"><center>&copy; Wizard Duel 2018: A Scott Learmonth Game</center></div>
 </body>
