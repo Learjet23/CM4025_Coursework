@@ -19,5 +19,5 @@ if ($db->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $db->error;
 }
-
+echo "test";
 $db->close();
