@@ -10,7 +10,7 @@ include ("dbconnect.php");
 
 echo "sup yo";
 
-$sql = "INSERT INTO 'user' ('username', 'password') VALUES ('scott', 'pwd')";
+$sql = "INSERT INTO 'user' (username, password) VALUES ('scott', 'pwd')";
 
 echo "still there?";
 
