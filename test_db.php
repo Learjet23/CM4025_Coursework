@@ -12,6 +12,8 @@ echo "sup yo";
 
 $sql = "INSERT INTO 'user' ('username', 'password') VALUES ('scott', 'pwd')";
 
+echo "still there?";
+
 if ($db->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
