@@ -13,7 +13,7 @@ if ($db->connect_error) {
 }
 echo "Connected successfully";
 
-$sql = "INSERT INTO 'user' ('username', 'password') VALUES ('scott', 'pwd')";
+$sql = "INSERT INTO 'user' (username, password) VALUES ('scott', 'pwd')";
 
 if ($db->query($sql) === TRUE) {
     echo "New record created successfully";
