@@ -20,4 +20,4 @@ if (mysqli_query($db, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($db);
 }
 echo "\n after query";
-$db->close();
+mysqli_close($db);

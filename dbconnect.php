@@ -12,7 +12,7 @@ $data = 'wizard';
 
 $db = mysqli_connect($host, $user, $pwd, $data);
 
-if ($db->connect_error) {
+if (!$db) {
     echo "\ndb failed to connect";
-    die("Connection failed: " . $db->connect_error);
+    die("Connection failed: " . mysqli_connect_error());
 }else{echo "\ndb connected";}
