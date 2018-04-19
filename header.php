@@ -1,3 +1,4 @@
+<?php include ('dbconnect.php');?>
 <html>
 <head>
     <title>Wizard Duels</title>

@@ -7,6 +7,7 @@
  */
 
 include ('dbconnect.php');
+include ('spells.php');
 
 $username = $_SESSION['username'];
 
@@ -17,12 +18,12 @@ $spells_sql = "SELECT * FROM usr_spells WHERE iduser=$iduser_sql";
 $usr_spells_get = mysqli_query($db, $spells_sql);
 
 
-//Refresh PP of spells if 24 hours past since last login
+//Refresh PP of spells if a day has past since last login
 if($current_time > $_SESSION['login_date']){
-    $avada_pp = "SELECT maxpp FROM spells WHERE name='Avada Kedavra'";
-    $crucio_pp = "SELECT maxpp FROM spells WHERE name='Crucio'";
-    $expel_pp = "SELECT maxpp FROM spells WHERE name='Expelliarmous'";
-    $fipendo_pp = "SELECT maxpp FROM spells WHERE  name='Flipendo'";
+    $avada_pp = $avada['maxpp'];
+    $crucio_pp = $crucio['maxpp'];
+    $expel_pp = $expel['maxpp'];
+    $fipendo_pp = $flipendo['maxpp'];
 
     $refresh_avada_pp = "INSERT INTO usr_spells (PP) VALUE ('$avada_pp') WHERE iduser=$iduser_sql AND name='Avada Kedavra'";
     $refresh_crucio_pp = "INSERT INTO usr_spells (PP) VALUE ('$crucio_pp') WHERE iduser=$iduser_sql AND name='Crucio'";
