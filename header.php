@@ -29,12 +29,5 @@
 <!--Game box-->
 <div id="header">Wizard Duel</div>
 <div id="container">
-    <div id="navigation"><div id="nav_div">
-            <?php
-                if(isset($_SESSION['success'])) {
-                    include('player.php');
-                    echo $avada['maxpp'];
-                }else{echo "fail";}
-            ?>
-        </div></div>
+    <div id="navigation"><div id="nav_div"></div></div>
     <div id="content"><div id="con_div">
