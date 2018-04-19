@@ -31,5 +31,5 @@ include ('player.php');
 <!--Game box-->
 <div id="header">Wizard Duel</div>
 <div id="container">
-    <div id="navigation"><div id="nav_div"><?php echo $usr_spells_get ?></div></div>
+    <div id="navigation"><div id="nav_div"><?php echo $spells_sql[''] ?></div></div>
     <div id="content"><div id="con_div">
