@@ -41,7 +41,7 @@ if(isset($_POST['reg_user'])){
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         mysqli_query($db, $sql);
         $_SESSION['username'] = $username;
-        $_SESSION['login_time'] = $current_date;
+        $_SESSION['login_date'] = $current_date;
         $_SESSION['success'] = "You are logged in";
         header('location: index.php');
     }
