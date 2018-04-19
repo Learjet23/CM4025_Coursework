@@ -18,4 +18,4 @@ $db = mysqli_connect($host, $usr, $pwd, $data);
 if (!$db) {
     echo "\ndb failed to connect";
     die("Connection failed: " . mysqli_connect_error());
-}else{echo "\ndb connected";}
+}
