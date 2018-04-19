@@ -28,5 +28,5 @@
 <!--Game box-->
 <div id="header">Wizard Duel</div>
 <div id="container">
-    <div id="navigation"><div id="nav_div"></div>2<br /> <br /></div>
+    <div id="navigation"><div id="nav_div"></div><br /> <br /></div>
     <div id="content"><div id="con_div">
