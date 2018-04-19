@@ -20,6 +20,5 @@ if (isset($_GET['logout'])) {
 include ('header.php');
 
 echo "hello world";
-echo $_SESSION['login_date'];
 
 include ("footer.php");
