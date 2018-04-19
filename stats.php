@@ -6,8 +6,6 @@
  * Time: 21:58
  */
 
-session_start();
-
 include ("header.php");
 
 if(!isset($_SESSION['username'])){
