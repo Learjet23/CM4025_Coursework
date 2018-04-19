@@ -1,3 +1,5 @@
+<?php include ("player.php") ?>
+
 <html>
 <head>
     <title>Wizard Duels</title>
