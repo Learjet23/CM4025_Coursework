@@ -23,7 +23,7 @@ if($current_time > $_SESSION['login_date']){
     $avada_pp = $avada['maxpp'];
     $crucio_pp = $crucio['maxpp'];
     $expel_pp = $expel['maxpp'];
-    $fipendo_pp = $flipendo['maxpp'];
+    $flipendo_pp = $flipendo['maxpp'];
 
     $refresh_avada_pp = "INSERT INTO usr_spells (PP) VALUE ('$avada_pp') WHERE iduser=$iduser_sql AND name='Avada Kedavra'";
     $refresh_crucio_pp = "INSERT INTO usr_spells (PP) VALUE ('$crucio_pp') WHERE iduser=$iduser_sql AND name='Crucio'";
