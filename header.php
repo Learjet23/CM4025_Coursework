@@ -16,11 +16,6 @@
 <div id="container">
     <div id="navigation">
         <div id="nav_div">
-            <?php
-                if(isset($_SESSION['username'])){
-                    include ("player.php");
-                }
-            ?>
             &raquo; <a href="spells.php">Your spells</a><br/><br/>
             &raquo; <a href="ranks.php">Rankings</a><br/><br/>
             &raquo; <a href="stats.php">Your stats</a><br/><br/>
