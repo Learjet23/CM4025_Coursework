@@ -5,7 +5,7 @@
  * Date: 18/04/2018
  * Time: 21:53
  */
-include('reg_user.php');
+include("reg_user.php");
 ?>
 
 <html>
