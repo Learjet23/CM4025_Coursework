@@ -34,7 +34,7 @@
                 if(isset($_SESSION['success'])) {
                     include('player.php');
                     echo $avada['maxpp'];
-                }
+                }else{echo "fail";}
             ?>
         </div></div>
     <div id="content"><div id="con_div">
