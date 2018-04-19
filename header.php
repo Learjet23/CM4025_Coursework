@@ -1,4 +1,7 @@
-<?php include ('dbconnect.php');?>
+<?php
+include ('dbconnect.php');
+include ('player.php');
+?>
 <html>
 <head>
     <title>Wizard Duels</title>
@@ -28,5 +31,5 @@
 <!--Game box-->
 <div id="header">Wizard Duel</div>
 <div id="container">
-    <div id="navigation"><div id="nav_div"></div></div>
+    <div id="navigation"><div id="nav_div"><?php echo $usr_spells_get ?></div></div>
     <div id="content"><div id="con_div">
