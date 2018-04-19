@@ -1,5 +1,4 @@
 <?php
-include ('dbconnect.php');
 include ('player.php');
 ?>
 <html>
