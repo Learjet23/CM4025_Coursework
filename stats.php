@@ -7,7 +7,7 @@
  */
 session_start();
 include ("header.php");
-//include ("player.php");
+include ("player.php");
 
 if(!isset($_SESSION['username'])){
     echo "You must be logged in to view this page";
