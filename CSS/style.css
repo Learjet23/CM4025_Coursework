@@ -1,8 +1,12 @@
-body{
+body {
     background-color: #C4C4C4;
 }
 
-#header{
+body a {
+    color: #000000;
+}
+
+#header {
     background-color: #898989;
     width: 800px;
     color: #FFFFFF;
@@ -10,38 +14,53 @@ body{
     border: 1px solid #000000;
 }
 
-#container{
+#output {
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px;
+    border: 1px solid #898989;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+#container {
     overflow: hidden;
 }
 
-#navigation{
+#navigation {
     background-color: #C3C3C3;
-    width: 180px;
+    width: 179px;
     float: left;
     margin-bottom: -32767px;
     padding-bottom: 32767px;
-    border-right: 1px solid #898989;
     border-left: 1px solid #000000;
+    border-right: 1px solid #898989;
 }
 
-#nav_div{
+#navigation a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#nav_div {
     padding: 10px;
 }
 
-#con_div{
+#con_div {
     padding: 10px;
 }
 
-#content{
+#content {
     background-color: #DDDDDD;
     width: 620px;
+    float: left;
     margin-bottom: -32767px;
     padding-bottom: 32767px;
-    float: left;
     border-right: 1px solid #000000;
 }
 
-#footer{
+#footer {
     background-color: #898989;
     width: 800px;
     color: #FFFFFF;
