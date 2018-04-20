@@ -10,6 +10,7 @@ include ("header.php");
 
 $username = $_SESSION['username'];
 $userid = "SELECT userid FROM users WHERE username='$username'";
+$userid_get = mysqli_query($db,$userid);
 $stats = "SELECT * FROM usr_spells WHERE userid='$userid'";
 
 if(!isset($_SESSION['username'])){
@@ -23,7 +24,7 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
-                echo $username . " " . $userid;
+                echo $username . " " . $userid_get;
                 ?>
             </i></td>
         </tr>
