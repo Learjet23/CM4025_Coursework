@@ -7,7 +7,6 @@
  */
 session_start();
 include ("header.php");
-include ("safe.php");
 $username = $_SESSION['username'];
 
 if(!isset($_SESSION['username'])){
