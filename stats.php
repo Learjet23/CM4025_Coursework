@@ -8,9 +8,7 @@
 session_start();
 include ("header.php");
 
-$username = $_SESSION['username'];
-$userid = "SELECT userid FROM users WHERE username='$username'";
-$stats = "SELECT * FROM usr_spells WHERE userid='$userid'";
+
 
 if(!isset($_SESSION['username']){
     echo "You must be logged in to view this page";
@@ -23,7 +21,7 @@ if(!isset($_SESSION['username']){
             <td>Username: </td>
             <td><i>
                 <?php
-                echo $username . " " . $userid;
+
                 ?>
             </i></td>
         </tr>
