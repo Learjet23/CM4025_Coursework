@@ -6,8 +6,6 @@
  * Time: 00:52
  */
 
-include ('dbconnect.php');
-
 $users_sql = "SELECT * FROM users WHERE username='".$_SESSION['username']."'";
 $users_get = mysqli_query($db, $users_sql);
 

@@ -6,9 +6,8 @@
  * Time: 21:58
  */
 session_start();
-include ("safe.php");
 include ("header.php");
-
+include ("safe.php");
 $username = $_SESSION['username'];
 
 if(!isset($_SESSION['username'])){
