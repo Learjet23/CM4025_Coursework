@@ -20,11 +20,7 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
-                if (mysqli_num_rows($user_get) > 0) {
-                    while($row = mysqli_fetch_assoc($user_get)) {
-                        echo $row["username"]. "<br>";
-                    }
-                }else{echo "no results found";}
+                echo $_SESSION['username'];
                 ?>
             </i></td>
         </tr>
