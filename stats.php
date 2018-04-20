@@ -9,9 +9,6 @@ session_start();
 include ("header.php");
 
 $username = $_SESSION['username'];
-$userid = "SELECT userid FROM users WHERE username='$username'";
-$userid_get = mysqli_query($db,$userid);
-$stats = "SELECT * FROM usr_spells WHERE userid='$userid'";
 
 if(!isset($_SESSION['username'])){
     echo "You must be logged in to view this page";
@@ -23,8 +20,8 @@ if(!isset($_SESSION['username'])){
         <tr>
             <td>Username: </td>
             <td><i>
-                <?php
-                echo $username . " " . $userid_get;
+                <?php include("safe.php");
+                echo $username . " " . $usr_spells_get;
                 ?>
             </i></td>
         </tr>
