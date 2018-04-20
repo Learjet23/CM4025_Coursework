@@ -18,3 +18,6 @@ $usr_spells = "SELECT * FROM usr_spells WHERE userid='$userid'";
 $usr_spells_get = mysqli_query($db, $usr_spells);
 **/
 
+$users_get = mysql_query("SELECT * FROM users WHERE username='".$_SESSION['username']."'")or die(mysqli_error());
+$users = mysql_fetch_assoc($users_get);
+
