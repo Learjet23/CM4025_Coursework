@@ -7,7 +7,6 @@
  */
 session_start();
 include ("header.php");
-include ("player.php");
 
 if(!isset($_SESSION['username'])){
     echo "You must be logged in to view this page";
@@ -20,6 +19,7 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
+                include ("player.php");
                 echo $_SESSION['username'];
                 ?>
             </i></td>
