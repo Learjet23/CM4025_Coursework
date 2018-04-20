@@ -24,7 +24,7 @@ if(!isset($_SESSION['username'])){
                     while($row = mysqli_fetch_assoc($usr_spells_get)) {
                         echo $row["username"]. "<br>";
                     }
-                }
+                }else{echo "no results found";}
                 ?>
             </i></td>
         </tr>
