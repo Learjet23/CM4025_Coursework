@@ -17,11 +17,19 @@
 <div id="container">
     <div id="navigation">
         <div id="nav_div">
-            <?php include ("safe.php");?>
-            &raquo; <a href="spells.php">Your spells</a><br/><br/>
-            &raquo; <a href="ranks.php">Rankings</a><br/><br/>
-            &raquo; <a href="stats.php">Your stats</a><br/><br/>
-            &raquo; <a href="index.php?logout='1'" style="color: red;">logout</a>
+            <?php
+            if(isset($_SESSION['username'])) {
+                include("safe.php");
+                ?>
+                &raquo; <a href="spells.php">Your spells</a><br/><br/>
+                &raquo; <a href="ranks.php">Rankings</a><br/><br/>
+                &raquo; <a href="stats.php">Your stats</a><br/><br/>
+                &raquo; <a href="index.php?logout='1'" style="color: red;">logout</a>
+                <?php
+            }else{
+                echo "You must be logged in to see this";
+            }
+            ?>
         </div>
     </div>
     <div id="content"><div id="con_div">
