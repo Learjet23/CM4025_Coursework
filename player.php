@@ -19,7 +19,7 @@ $spells_sql = "SELECT * FROM usr_spells WHERE iduser=$iduser_sql";
 $usr_spells_get = mysqli_query($db, $spells_sql);
 
 
-//Refresh PP of spells if a day has past since last login
+/**Refresh PP of spells if a day has past since last login
 //Wont work. needs database edit
 if($current_date > $_SESSION['login_date']){
     $avada_pp = $avada['maxpp'];
@@ -36,4 +36,4 @@ if($current_date > $_SESSION['login_date']){
     mysqli_query($db, $refresh_expel_pp);
     mysqli_query($db, $refresh_crucio_pp);
     mysqli_query($db, $refresh_avada_pp);
-}
+}**/
