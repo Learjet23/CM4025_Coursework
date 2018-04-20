@@ -6,6 +6,7 @@
  * Time: 21:58
  */
 session_start();
+include ("safe.php");
 include ("header.php");
 
 $username = $_SESSION['username'];
@@ -20,7 +21,7 @@ if(!isset($_SESSION['username'])){
         <tr>
             <td>Username: </td>
             <td><i>
-                <?php include("safe.php");
+                <?php
                 echo $username . " " . $usr_spells_get;
                 ?>
             </i></td>
