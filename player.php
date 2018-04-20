@@ -15,15 +15,13 @@ $user_sql = "SELECT * FROM users WHERE username='$username'";
 $user_get = mysqli_query($db, $user_sql);
 
 $iduser_sql = $user_get['userid'];
-
 $spells_sql = "SELECT * FROM usr_spells WHERE iduser=$iduser_sql";
-
 $usr_spells_get = mysqli_query($db, $spells_sql);
 
 
 //Refresh PP of spells if a day has past since last login
 //Wont work. needs database edit
-if($current_time > $_SESSION['login_date']){
+if($current_date > $_SESSION['login_date']){
     $avada_pp = $avada['maxpp'];
     $crucio_pp = $crucio['maxpp'];
     $expel_pp = $expel['maxpp'];
