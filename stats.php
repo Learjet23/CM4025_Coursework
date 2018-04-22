@@ -17,6 +17,7 @@ $spells_get = mysqli_query($db, $spells);
 
 $usrid_get = "SELECT userid FROM users WHERE username='".$_SESSION['username']."'";
 $userid = mysqli_query($db, $usrid_get);
+
 $usr_spells = "SELECT * FROM usr_spells WHERE userid='$userid'";
 $usr_spells_get = mysqli_query($db, $usr_spells);
 
@@ -31,7 +32,7 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
-                echo $username . " " . $usr_spells_get;
+                echo $username . " " . $userid;
                 ?>
             </i></td>
         </tr>
