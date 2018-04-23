@@ -13,7 +13,7 @@ $users_get = mysqli_query($db, $users_sql);
 $spells = "SELECT * FROM spells";
 $spells_get = mysqli_query($db, $spells);
 
-$usrid_get = "SELECT userid FROM users WHERE username='".$_SESSION['username']."'";
+$usrid_get = "SELECT iduser FROM users WHERE username='".$_SESSION['username']."'";
 $userid = mysqli_query($db, $usrid_get);
 
 $usr_spells = "SELECT * FROM usr_spells WHERE userid='$userid'";
