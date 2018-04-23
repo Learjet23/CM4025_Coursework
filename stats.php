@@ -23,7 +23,7 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
-                include ("safe.php");
+                include("safe.php");
                 echo $userid;
                 ?>
             </i></td>

@@ -18,3 +18,4 @@ $userid = mysqli_query($db, $usrid_get);
 
 $usr_spells = "SELECT * FROM usr_spells WHERE userid='$userid'";
 $usr_spells_get = mysqli_query($db, $usr_spells);
+?>
