@@ -14,9 +14,9 @@ include("reg_user.php");
     <link rel="stylesheet" type="text/css" href="CSS/login.css">
 </head>
 <body>
-    <div class="header">
+    <!--<div class="header">
         <h2>Login</h2>
-    </div>
+    </div>-->
     <form method="post" action="login.php">
         <?php include('errors.php');?>
         <div class="input-group">
