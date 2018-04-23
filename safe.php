@@ -22,3 +22,4 @@ $userid = mysqli_fetch_assoc($users_get);
 $usr_spells_sql = "SELECT * FROM usr_spells WHERE userid='$userid'";
 $usr_spells_get = mysqli_query($db, $usr_spells_sql);
 $usr_spells = mysqli_fetch_assoc($usr_spells_get);
+?>
