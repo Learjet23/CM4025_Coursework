@@ -23,7 +23,7 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
-                echo $username . " " . $userid;
+                echo $userid;
                 ?>
             </i></td>
         </tr>
