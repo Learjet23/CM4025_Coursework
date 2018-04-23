@@ -24,7 +24,7 @@ if(!isset($_SESSION['username'])){
             <td><i>
                 <?php
                 include("safe.php");
-                echo $userid['iduser'];
+                echo $username . " " . $userid['iduser'];
                 ?>
             </i></td>
         </tr>
