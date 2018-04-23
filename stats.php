@@ -26,7 +26,9 @@ if(!isset($_SESSION['username'])){
                 include("safe.php");
                 echo $username;
                 ?>
-            </i></td><br/>
+            </i></td>
+        </tr>
+        <tr>
             <td>HP: </td>
             <td><i>
                 <?php
