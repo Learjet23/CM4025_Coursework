@@ -32,7 +32,7 @@ if(!isset($_SESSION['username'])){
             <td>HP: </td>
             <td><i>
                 <?php
-                echo "HP " . $users['hp'] ;
+                echo "HP " . $users['HP'] ;
                 ?>
             </i></td>
         </tr>
