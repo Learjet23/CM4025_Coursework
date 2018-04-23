@@ -25,7 +25,7 @@ if(!isset($_SESSION['username'])){
                 <?php
                 include("safe.php");
                 echo $username;
-                echo "\nHP " . $users['hp'] ;
+                echo "<\br>HP " . $users['hp'] ;
                 ?>
             </i></td>
         </tr>
