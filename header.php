@@ -19,7 +19,6 @@
         <div id="nav_div">
             <?php
             if(isset($_SESSION['username'])) {
-                //include("safe.php");
                 ?>
                 &raquo; <a href="spells.php">Your spells</a><br/><br/>
                 &raquo; <a href="ranks.php">Rankings</a><br/><br/>
