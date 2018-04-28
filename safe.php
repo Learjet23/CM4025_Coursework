@@ -19,6 +19,6 @@ $userid_sql = "SELECT iduser FROM users WHERE username='".$_SESSION['username'].
 $userid_get = mysqli_query($db, $userid_sql);
 $userid = mysqli_fetch_assoc($userid_get);
 
-$usr_spell_sql = "SELECT * FROM usr_spells WHERE iduser='$userid' AND name='Expelliarmous'";
+$usr_spell_sql = "SELECT * FROM usr_spells WHERE iduser='".$userid."'";
 $usr_spell_get = mysqli_query($db, $usr_spell_sql);
 $usr_spell = mysqli_fetch_assoc($usr_spell_get);
