@@ -13,6 +13,7 @@ if(!isset($_SESSION['username'])){
     echo "You must be logged in to view this page";
 }else{
     ?>
+    <!-- Users spells and PP -->
     <h2>Your Spells</h2>
     <br/>
     <table>
