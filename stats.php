@@ -28,7 +28,7 @@ if(!isset($_SESSION['username'])){
             <td><i><?php echo $users['HP'];?></i></td>
         </tr>
         <tr>
-            <td>HP: </td>
+            <td>XP: </td>
             <td><i><?php echo $users['XP'];?></i></td>
         </tr>
     </table>
