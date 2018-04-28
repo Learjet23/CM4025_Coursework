@@ -6,7 +6,34 @@
  * Time: 12:28
  */
 
-$avada = "SELECT * FROM spells WHERE name='Avada Kedavra'";
-$crucio = "SELECT * FROM spells WHERE name='Crucio'";
-$flipendo = "SELECT * FROM spells WHERE name='Flipendo'";
-$expel = "SELECT * FROM spells WHERE name='Expelliarmous'";
+session_start();
+include ("header.php");
+
+if(!isset($_SESSION['username'])){
+    echo "You must be logged in to view this page";
+}else{
+    ?>
+    <h2>Your Spells</h2>
+    <br/>
+    <table>
+        <tr>
+            <td>Expelliarmous: </td>
+            <td><i><?php echo $usr_spells['PP'];?></i></td>
+        </tr>
+        <tr>
+            <td>Flipendo: </td>
+            <td><i><?php echo $usr_spells['PP'];?></i></td>
+        </tr>
+        <tr>
+            <td>Crucio: </td>
+            <td><i><?php echo $usr_spells['PP'];?></i></td>
+        </tr>
+        <tr>
+            <td>Avada Kedavra: </td>
+            <td><i><?php echo $usr_spells['PP'];?></i></td>
+        </tr>
+    </table>
+    <?php
+}
+
+include ("footer.php");
