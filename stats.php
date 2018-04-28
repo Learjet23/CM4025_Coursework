@@ -21,19 +21,15 @@ if(!isset($_SESSION['username'])){
     <table>
         <tr>
             <td>Username: </td>
-            <td><i>
-                <?php
-                echo $username;
-                ?>
-            </i></td>
+            <td><i><?php echo $username;?></i></td>
         </tr>
         <tr>
             <td>HP: </td>
-            <td><i>
-                <?php
-                echo $users['HP'] ;
-                ?>
-            </i></td>
+            <td><i><?php echo $users['HP'];?></i></td>
+        </tr>
+        <tr>
+            <td>HP: </td>
+            <td><i><?php echo $users['XP'];?></i></td>
         </tr>
     </table>
 <?php
