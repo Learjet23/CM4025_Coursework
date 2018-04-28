@@ -23,15 +23,15 @@ if(!isset($_SESSION['username'])){
         </tr>
         <tr>
             <td>Flipendo: </td>
-            <td><i><?php ?></i></td>
+            <td><i><?php echo $usr_spell['flipendo'];?></i></td>
         </tr>
         <tr>
             <td>Crucio: </td>
-            <td><i><?php ?></i></td>
+            <td><i><?php echo $usr_spell['crucio'];?></i></td>
         </tr>
         <tr>
             <td>Avada Kedavra: </td>
-            <td><i><?php ?></i></td>
+            <td><i><?php echo $usr_spell['avada'];?></i></td>
         </tr>
     </table>
     <?php
