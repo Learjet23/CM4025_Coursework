@@ -11,7 +11,6 @@ include ("header.php");
 
 if(!isset($_SESSION['username'])){
     echo "You must be logged in to view this page";
-    $expelliarmous = "Expelliarmous";
 }else{
     ?>
     <!-- Users spells and PP -->
@@ -20,7 +19,7 @@ if(!isset($_SESSION['username'])){
     <table>
         <tr>
             <td>Expelliarmous: </td>
-            <td><i><?php if ($usr_spells['name'] === $expelliarmous){ echo $usr_spells['PP'];};?></i></td>
+            <td><i><?php if ($usr_spells['name'] === "Expelliarmous"){ echo $usr_spells['PP'];};?></i></td>
         </tr>
         <tr>
             <td>Flipendo: </td>
