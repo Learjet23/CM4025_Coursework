@@ -19,7 +19,7 @@ if(!isset($_SESSION['username'])){
     <table>
         <tr>
             <td>Expelliarmous: </td>
-            <td><i><?php if ($usr_spells['name'] === "Expelliarmous"){ echo $usr_spells['PP'];};?></i></td>
+            <td><i><?php if ($usr_spells['name'] == "Expelliarmous"){ echo $usr_spells['PP'];};?></i></td>
         </tr>
         <tr>
             <td>Flipendo: </td>
