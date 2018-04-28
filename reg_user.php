@@ -45,6 +45,7 @@ if(isset($_POST['reg_user'])){
         $_SESSION['login_date'] = $current_date;
         $_SESSION['success'] = "You are logged in";
         $spell_add = "INSERT INTO usr_spells (avada, flipendo, crucio, expel) VALUES ('1', '100', '10', '70') WHERE iduser='".$users['iduser']."'";
+        mysqli_query($db, $spell_add);
         header('location: index.php');
     }
 }
