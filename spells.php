@@ -19,7 +19,7 @@ if(!isset($_SESSION['username'])){
     <table>
         <tr>
             <td>Expelliarmous: </td>
-            <td><i><?php echo $userid; echo $usr_expel['PP']; ?></i></td>
+            <td><i><?php echo $usr_spell['expel']; ?></i></td>
         </tr>
         <tr>
             <td>Flipendo: </td>
