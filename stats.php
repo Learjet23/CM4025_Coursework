@@ -23,7 +23,6 @@ if(!isset($_SESSION['username'])){
             <td>Username: </td>
             <td><i>
                 <?php
-                include("safe.php");
                 echo $username;
                 ?>
             </i></td>
@@ -32,7 +31,7 @@ if(!isset($_SESSION['username'])){
             <td>HP: </td>
             <td><i>
                 <?php
-                echo "HP " . $users['HP'] ;
+                echo $users['HP'] ;
                 ?>
             </i></td>
         </tr>

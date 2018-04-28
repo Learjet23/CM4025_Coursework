@@ -18,6 +18,7 @@
     <div id="navigation">
         <div id="nav_div">
             <?php
+            include("safe.php");
             if(isset($_SESSION['username'])) {
                 ?>
                 &raquo; <a href="spells.php">Your spells</a><br/><br/>
