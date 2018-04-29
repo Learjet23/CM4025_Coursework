@@ -7,7 +7,6 @@
  */
 
 include ("dbconnect.php");
-include ("safe.php");
 
 session_start();
 
@@ -41,11 +40,12 @@ if(isset($_POST['reg_user'])){
         $password = md5($password);
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         mysqli_query($db, $sql);
-        $stat_sql = "INSERT INTO usr_spells (iduser) VALUE ('".$users['iduser']."')";
-        mysqli_query($db, $stat_sql);
         $_SESSION['username'] = $username;
         $_SESSION['login_date'] = $current_date;
         $_SESSION['success'] = "You are logged in";
+        include ("safe.php");
+        $stat_sql = "INSERT INTO usr_spells (iduser) VALUE ('".$users['iduser']."')";
+        mysqli_query($db, $stat_sql);
         header('location: index.php');
     }
 }
