@@ -41,7 +41,7 @@ if(isset($_POST['reg_user'])){
         $password = md5($password);
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         mysqli_query($db, $sql);
-        $stat_sql = "INSERT INTO usr_spells (iduser, expel, avada, crucio, flipendo) VALUES ('".$users['iduser']."','70','1','10','100')";
+        $stat_sql = "INSERT INTO usr_spells (iduser) VALUE ('".$users['iduser']."')";
         mysqli_query($db, $stat_sql);
         $_SESSION['username'] = $username;
         $_SESSION['login_date'] = $current_date;
