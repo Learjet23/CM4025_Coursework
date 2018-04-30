@@ -74,7 +74,7 @@ if(isset($_POST['login_user'])){
             if(time() > ($logTime['time'] + 86400)){
                 $update = "UPDATE login SET time='".time()."' WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $update);
-                $restorePP = "UPDATE usr_spells SET avada=1 AND expel=70 AND flip=100 AND crucio=10 WHERE iduser='".$users['iduser']."'";
+                $restorePP = "UPDATE usr_spells SET avada=1 AND expel=100 AND flip=70 AND crucio=10 WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $restorePP);
                 $restoreHP = "UPDATE users SET HP=100 WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $restoreHP);
