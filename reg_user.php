@@ -64,23 +64,7 @@ if(isset($_POST['login_user'])){
         $password = md5($password);
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $result = mysqli_query($db, $query);
-        if(mysqli_num_rows($result) == 1){
-            $_SESSION['username'] = $username;
-            $_SESSION['success'] = "You are now logged in!";
-
-            $logTime_sql = "SELECT * FROM login WHERE iduser='".$users['iduser']."'";
-            $logTime = mysqli_query($db, $logTime_sql);
-            if(time() > ($logTime['time'] - 86400)){
-                $update = "UPDATE login SET time='".time()."' WHERE iduser='".$users['iduser']."'";
-                mysqli_query($db, $update);
-                $restorePP = "UPDATE usr_spells SET avada=1 AND expel=70 AND flip=100 AND crucio=10 WHERE iduser='".$users['iduser']."'";
-                mysqli_query($db, $restorePP);
-                $restoreHP = "UPDATE users SET HP=100 WHERE iduser='".$users['iduser']."'";
-                header('location: index.php');
-            }
-        }else {
-            header('location: index.php');
-        }
+        header('location: index.php');
     }else{
         array_push($errors, "Wrong username and password combination");
     }
