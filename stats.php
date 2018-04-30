@@ -27,6 +27,7 @@ if(!isset($_SESSION['username'])){
             <td>XP: </td>
             <td><i><?php echo $users['XP'];?></i></td>
         </tr>
+
     </table>
 <?php
 }
