@@ -14,7 +14,7 @@ if(!isset($_SESSION['username'])){
         echo "YOU SHOULD NOT BE HERE";
     }else{
         $id = $_GET['id'];
-        $usr_check_sql = "SELECT * FROM users WHERE iduser='". $id ."'";
+        $usr_check_sql = "SELECT * FROM users WHERE iduser=$id";
         $usr_check = mysqli_query($db, $usr_check_sql);
         if(mysqli_num_rows($usr_check) == 0){
             echo "NO USER WITH THIS ID";
