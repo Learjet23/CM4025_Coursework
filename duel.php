@@ -27,9 +27,6 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $avada['chance']){
                     echo "attack missed!";
-                    $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '0', '".$enemy_stats['HP']."','".time()."')";
-                    mysqli_query($db, $log_sql);
-                    header('location: stats.php?id=' . $id);
                 }else{
                     if($usr_spell['avada'] >= 1){
                         $damage = $avada['damage'];
@@ -71,8 +68,6 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $crucio['chance']){
                     echo "attack missed!";
-                    $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '0', '".$enemy_stats['HP']."','".time()."')";
-                    mysqli_query($db, $log_sql);
                 }else{
                     if($usr_spell['crucio'] >= 1){
                         $damage = $crucio['damage'];
@@ -114,8 +109,6 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $flip['chance']){
                     echo "attack missed!";
-                    $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '0', '".$enemy_stats['HP']."','".time()."')";
-                    mysqli_query($db, $log_sql);
                 }else{
                     if($usr_spell['flip'] >= 1){
                         $damage = $flip['damage'];
@@ -157,8 +150,6 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $expel['chance']){
                     echo "attack missed!";
-                    $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."','$id', '0', '".$enemy_stats['HP']."','".time()."')";
-                    mysqli_query($db, $log_sql);
                 }else{
                     if($usr_spell['expel'] >= 1){
                         $damage = $expel['damage'];
