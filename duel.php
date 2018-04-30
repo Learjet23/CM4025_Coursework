@@ -23,13 +23,13 @@ if(!isset($_SESSION['username'])){
                 echo "User has no health and cannot be attacked";
             }else{
                 $chance = rand(1,100);
-                if($chance > 25){
+                if($chance > $avada['chance']){
                     echo "attack missed!";
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                     header('location: stats.php?id=' . $id);
                 }else{
-                    $damage = $spells['Avada Kedavra'];
+                    $damage = $avada['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
@@ -58,12 +58,12 @@ if(!isset($_SESSION['username'])){
                 echo "User has no health and cannot be attacked";
             }else{
                 $chance = rand(1,100);
-                if($chance > 50){
+                if($chance > $crucio['chance']){
                     echo "attack missed!";
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    $damage = $spells['Crucio'];
+                    $damage = $crucio['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
@@ -92,12 +92,12 @@ if(!isset($_SESSION['username'])){
                 echo "User has no health and cannot be attacked";
             }else{
                 $chance = rand(1,100);
-                if($chance > 100){
+                if($chance > $flip['chance']){
                     echo "attack missed!";
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    $damage = $spells['Flipendo'];
+                    $damage = $flip['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
@@ -126,12 +126,12 @@ if(!isset($_SESSION['username'])){
                 echo "User has no health and cannot be attacked";
             }else{
                 $chance = rand(1,100);
-                if($chance > 75){
+                if($chance > $expel['chance']){
                     echo "attack missed!";
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    $damage = $spells['Expelliarmous'];
+                    $damage = $expel['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
