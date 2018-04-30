@@ -27,8 +27,6 @@ if(!isset($_SESSION['username'])){
             echo $usr_check_get['username'];
             ?>
             <br/><br/>
-            <h>Rank: <?php echo $usr_check_get['rank']; ?></h>
-            <br/>
             <h>HP: <?php echo $usr_check_get['HP'];?></h>
             <br/>
             <h>XP: <?php echo $usr_check_get['XP']; ?></h>
