@@ -31,7 +31,7 @@ if(!isset($_SESSION['username'])){
                 }else{
                     $damage = $avada['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                    mysqli_query($attack_sql);
+                    mysqli_query($db, $attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                     echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
@@ -65,7 +65,7 @@ if(!isset($_SESSION['username'])){
                 }else{
                     $damage = $crucio['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                    mysqli_query($attack_sql);
+                    mysqli_query($db, $attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                     echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
@@ -99,7 +99,7 @@ if(!isset($_SESSION['username'])){
                 }else{
                     $damage = $flip['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                    mysqli_query($attack_sql);
+                    mysqli_query($db, $attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                     echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
@@ -133,7 +133,7 @@ if(!isset($_SESSION['username'])){
                 }else{
                     $damage = $expel['damage'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                    mysqli_query($attack_sql);
+                    mysqli_query($db, $attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                     echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
