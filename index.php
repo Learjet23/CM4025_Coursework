@@ -37,9 +37,9 @@ $username = $_SESSION['username'];
     </tr>
     <tr>
         <td>Replenish health (cost 1XP per HP): </td>
-        <td><input type="button" id="buy" value="Buy"></td>
+        <td><button onclick="buyHealth();">Buy</button></td>
         <script>
-            document.getElementById('buy').onClick = function(){
+            function buyHealth(){
                 <?php
                 if($users['HP'] == 100){
                     echo "<br/>You already have max HP";
