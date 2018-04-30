@@ -33,7 +33,7 @@ if(!isset($_SESSION['username'])){
             <br/>
             <br/>
             <?php
-                $duel_check_sql = "SELECT id FROM logs WHERE attackid='".$users['iduser']."' AND defendid='".$id."' AND time <= '".(time() - 120)."'";
+                $duel_check_sql = "SELECT id FROM logs WHERE attackid='".$users['iduser']."' AND defendid='".$id."' AND time > '".(time() - 120)."'";
                 $duel_check = mysqli_query($db, $duel_check_sql);
                 $duel_num = mysqli_num_rows($duel_check);
             ?>
