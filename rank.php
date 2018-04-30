@@ -18,12 +18,13 @@ include ('header.php');
     </tr>
     <?php
     $count = 1;
-    $get_rank_sql = "SELECT username, XP FROM users ORDER BY XP";
+    $get_rank_sql = "SELECT username, XP, iduser FROM users ORDER BY XP";
     $get_rank_db = mysqli_query($db, $get_rank_sql);
     while ($get_rank = mysqli_fetch_assoc($get_rank_db)){
     echo "<tr>";
         echo "<td>" . $count . "</td>";
         echo "<td>" . $get_rank['username'] . "</td>";
+        echo "<td><a href=\"stats.php?id=" . $get_rank['iduser']. "\">" . $get_rank['username'] . "</a></td>";
         echo "<td>" . $get_rank['XP'] . "</td>";
     echo "</tr>";
     $count++;

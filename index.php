@@ -19,6 +19,17 @@ if (isset($_GET['logout'])) {
 
 include ('header.php');
 
-echo "hello world";
+if(!isset($_GET['id'])){
+    output("Error. You should not be here");
+}else{
+    $id = protect($_GET['id']);
+    $usr_check_sql = "SELECT * FROM users WHERE iduser='".$id."'";
+    $usr_check = mysqli_query($db, $usr_check_sql);
+    if(mysqli_num_rows($usr_check) == 0){
+        output("No user with this id");
+    }else{
+
+    }
+}
 
 include ("footer.php");
