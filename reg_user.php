@@ -70,7 +70,7 @@ if(isset($_POST['login_user'])){
 
             $logTime_sql = "SELECT * FROM login WHERE iduser='".$users['iduser']."'";
             $logTime = mysqli_query($db, $logTime_sql);
-            if(time() > ($logTime['time'] + 86400)){
+            if(time() > ($logTime['time'] - 86400)){
                 $update = "UPDATE login SET time='".time()."' WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $update);
                 $restorePP = "UPDATE usr_spells SET avada=1 AND expel=70 AND flip=100 AND crucio=10 WHERE iduser='".$users['iduser']."'";
