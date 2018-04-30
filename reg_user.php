@@ -66,7 +66,6 @@ if(isset($_POST['login_user'])){
         $result = mysqli_query($db, $query);
         if(mysqli_num_rows($result) == 1){
             $_SESSION['username'] = $username;
-            $_SESSION['login_date'] = $current_date;
             $_SESSION['success'] = "You are now logged in!";
 
             $logTime_sql = "SELECT * FROM login WHERE iduser='".$users['iduser']."'";
@@ -74,12 +73,9 @@ if(isset($_POST['login_user'])){
             if(time() > ($logTime['time'] + 86400)){
                 $update = "UPDATE login SET time='".time()."' WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $update);
-                $restorePP = "UPDATE usr_spells SET avada=1 AND expel=100 AND flip=70 AND crucio=10 WHERE iduser='".$users['iduser']."'";
+                $restorePP = "UPDATE usr_spells SET avada=1 AND expel=70 AND flip=100 AND crucio=10 WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $restorePP);
                 $restoreHP = "UPDATE users SET HP=100 WHERE iduser='".$users['iduser']."'";
-                mysqli_query($db, $restoreHP);
-                header('location: index.php');
-            }else{
                 header('location: index.php');
             }
         }else{
