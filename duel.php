@@ -29,7 +29,7 @@ if(!isset($_SESSION['username'])){
                     mysqli_query($db, $log_sql);
                     header('location: stats.php?id=' . $id);
                 }else{
-                    if($usr_avada['PP'] >= 1){
+                    if($usr_spell['avada'] >= 1){
                         $damage = $avada['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                         $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Avada Kedavra'";
@@ -70,7 +70,7 @@ if(!isset($_SESSION['username'])){
                     $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '0', '".$enemy_stats['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    if($usr_crucio['PP'] >= 1){
+                    if($usr_spell['crucio'] >= 1){
                         $damage = $crucio['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                         $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Crucio'";
@@ -111,7 +111,7 @@ if(!isset($_SESSION['username'])){
                     $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '0', '".$enemy_stats['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    if($usr_flip['PP'] >= 1){
+                    if($usr_spell['flip'] >= 1){
                         $damage = $flip['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                         $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Flipendo'";
@@ -152,7 +152,7 @@ if(!isset($_SESSION['username'])){
                     $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."','$id', '0', '".$enemy_stats['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    if($usr_expel['PP'] >= 1){
+                    if($usr_spell['expel'] >= 1){
                         $damage = $expel['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                         $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Expelliarmous'";
