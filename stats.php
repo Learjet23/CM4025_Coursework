@@ -43,7 +43,6 @@ if(!isset($_SESSION['username'])){
                 <input type="submit" name="flipendo" value="Flipendo">
                 <input type="submit" name="expel" value="Expelliarmous">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <?php}?>
             </form>
             <?php
         }
