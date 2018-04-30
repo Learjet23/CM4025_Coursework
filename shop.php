@@ -30,7 +30,7 @@ if(!isset($_SESSION['username'])){
             if($usr_spell['avada'] == $avada['maxpp']){
                 echo "This spell has the max PP";
             }else{
-                $add_pp = "UPDATE usr_spells SET PP= 1 WHERE iduser='".$users['iduser']."'";
+                $add_pp = "UPDATE usr_spells SET avada= 1 WHERE iduser='".$users['iduser']."'";
                 $cost_xp = "UPDATE users SET XP=XP - $cost WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $add_pp);
                 mysqli_query($db, $cost_xp);
@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])){
             if($usr_spell['crucio'] == $avada['maxpp']){
                 echo "This spell has the max PP";
             }else{
-                $add_pp = "UPDATE usr_spells SET PP= 10 WHERE iduser='".$users['iduser']."'";
+                $add_pp = "UPDATE usr_spells SET crucio= 10 WHERE iduser='".$users['iduser']."'";
                 $cost_xp = "UPDATE users SET XP=XP - $cost WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $add_pp);
                 mysqli_query($db, $cost_xp);
@@ -60,7 +60,7 @@ if(!isset($_SESSION['username'])){
             if($usr_spell['flip'] == $avada['maxpp']){
                 echo "This spell has the max PP";
             }else{
-                $add_pp = "UPDATE usr_spells SET PP= 70 WHERE iduser='".$users['iduser']."'";
+                $add_pp = "UPDATE usr_spells SET flip= 70 WHERE iduser='".$users['iduser']."'";
                 $cost_xp = "UPDATE users SET XP=XP - $cost WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $add_pp);
                 mysqli_query($db, $cost_xp);
@@ -75,7 +75,7 @@ if(!isset($_SESSION['username'])){
             if($usr_spell['expel'] == $avada['maxpp']){
                 echo "This spell has the max PP";
             }else{
-                $add_pp = "UPDATE usr_spells SET PP= 100 WHERE iduser='".$users['iduser']."'";
+                $add_pp = "UPDATE usr_spells SET expel= 100 WHERE iduser='".$users['iduser']."'";
                 $cost_xp = "UPDATE users SET XP=XP - $cost WHERE iduser='".$users['iduser']."'";
                 mysqli_query($db, $add_pp);
                 mysqli_query($db, $cost_xp);
