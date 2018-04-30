@@ -19,8 +19,12 @@ if(!isset($_SESSION['username'])){
         if(mysqli_num_rows($usr_check) == 0){
             echo "NO USER WITH THIS ID";
         }else{
-
-
+            $usr_check_get = mysqli_fetch_assoc($usr_check);
+            ?>
+            <h2>Player Stats</h2>
+            <br/>
+            <?php
+            echo $usr_check_get['username'];
         }
     }
 }
