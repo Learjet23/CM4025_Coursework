@@ -14,7 +14,7 @@ if(!isset($_SESSION['username'])){
         echo "YOU SHOULD NOT BE HERE";
     }else{
         $id = $_GET['id'];
-        $usr_check_sql = "SELECT * FROM users WHERE iduser=$id";
+        $usr_check_sql = "SELECT * FROM users WHERE iduser='". $id ."'";
         $usr_check = mysqli_query($db, $usr_check_sql);
         if(mysqli_num_rows($usr_check) == 0){
             echo "NO USER WITH THIS ID";
@@ -41,7 +41,6 @@ if(!isset($_SESSION['username'])){
                 <input type="submit" name="avada" value="Avada Kedavra">
                 <input type="submit" name="crucio" value="Crucio">
                 <input type="submit" name="flipendo" value="Flipendo">
-                <input type="submit" name="expel" value="Expelliarmous">
                 <input type="hidden" name="id" value="<?php echo $id; ?>"
             </form>
             <?php
