@@ -37,23 +37,7 @@ $username = $_SESSION['username'];
     </tr>
     <tr>
         <td>Replenish health (cost 1XP per HP): </td>
-        <td><button onclick="buyHealth();">Buy</button></td>
-        <script>
-            function buyHealth(){
-                <?php
-                if($users['HP'] == 100){
-                    echo "<br/>You already have max HP";
-                }else{
-                    $cost = 100 - $users['HP'];
-                    $get_health = "UPDATE users SET HP = HP + $cost WHERE iduser='".$users['iduser']."'";
-                    $update_xp = "UPDATE users SET XP = XP - $cost WHERE iduser='".$users['iduser']."'";
-                    mysqli_query($db, $get_health);
-                    mysqli_query($db, $update_xp);
-                    echo "<br/>Health replenished";
-                }
-                ?>
-            };
-        </script>
+        <td><form action="health.php" method="post"><input type="submit" name="buy" value="Buy"></form></td>
     </tr>
 
 </table>
