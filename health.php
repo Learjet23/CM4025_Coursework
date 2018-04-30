@@ -5,7 +5,7 @@
  * Date: 30/04/2018
  * Time: 18:24
  */
-
+session_start();
 include ('header.php');
 
 if(!isset($_SESSION['username'])){
