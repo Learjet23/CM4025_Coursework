@@ -78,9 +78,10 @@ if(isset($_POST['login_user'])){
                 $restoreHP = "UPDATE users SET HP=100 WHERE iduser='".$users['iduser']."'";
                 header('location: index.php');
             }
-        }else{
-            array_push($errors, "Wrong username and password combination");
+        }else {
             header('location: index.php');
         }
+    }else{
+        array_push($errors, "Wrong username and password combination");
     }
 }
