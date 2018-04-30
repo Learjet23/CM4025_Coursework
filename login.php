@@ -14,9 +14,6 @@ include("reg_user.php");
     <link rel="stylesheet" type="text/css" href="CSS/login.css">
 </head>
 <body>
-    <!--<div class="header">
-        <h2>Login</h2>
-    </div>-->
     <form method="post" action="login.php">
         <?php include('errors.php');?>
         <div class="input-group">
@@ -30,7 +27,7 @@ include("reg_user.php");
         <div class="input-group">
             <button type="submit" class="btn" name="login_user">Login</button>
         </div>
-        <p>Not a member? Register<a href="register.php">here.</a> </p>
+        <p>Not a member? Register <a href="register.php">here.</a> </p>
     </form>
 </body>
 </html>
