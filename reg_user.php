@@ -46,6 +46,8 @@ if(isset($_POST['reg_user'])){
         include ("safe.php");
         $stat_sql = "INSERT INTO usr_spells (iduser) VALUE ('".$users['iduser']."')";
         mysqli_query($db, $stat_sql);
+        $log = "INSERT INTO login (iduser, time) VALUES ('".$users['iduser']."', '".time()."')";
+        mysqli_query($db, $log);
         header('location: index.php');
     }
 }
@@ -66,7 +68,20 @@ if(isset($_POST['login_user'])){
             $_SESSION['username'] = $username;
             $_SESSION['login_date'] = $current_date;
             $_SESSION['success'] = "You are now logged in!";
-            header('location: index.php');
+
+            $logTime_sql = "SELECT * FROM login WHERE iduser='".$users['iduser']."'";
+            $logTime = mysqli_query($db, $logTime_sql);
+            if(time() > ($logTime['time'] + 86400)){
+                $update = "UPDATE login SET time='".time()."' WHERE iduser='".$users['iduser']."'";
+                mysqli_query($db, $update);
+                $restorePP = "UPDATE usr_spells SET avada=1 AND expel=70 AND flip=100 AND crucio=10 WHERE iduser='".$users['iduser']."'";
+                mysqli_query($db, $restorePP);
+                $restoreHP = "UPDATE users SET HP=100 WHERE iduser='".$users['iduser']."'";
+                mysqli_query($db, $restoreHP);
+                header('location: index.php');
+            }else{
+                header('location: index.php');
+            }
         }else{
             array_push($errors, "Wrong username and password combination");
         }
