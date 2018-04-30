@@ -37,7 +37,7 @@ $username = $_SESSION['username'];
     </tr>
     <tr>
         <td>Replenish health (cost 1XP per HP): </td>
-        <td><input type="button" name="buy" value="Buy"></td>
+        <td><input type="button" id="buy" value="Buy"></td>
         <script>
             document.getElementById('buy').onClick = function(){
                 <?php
