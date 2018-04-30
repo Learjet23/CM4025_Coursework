@@ -23,7 +23,7 @@
                 ?>
                 &raquo; <a href="spells.php">Your spells</a><br/><br/>
                 &raquo; <a href="rank.php">Rankings</a><br/><br/>
-                &raquo; <a href="stats.php">Your stats</a><br/><br/>
+                &raquo; <a href="index.php">Your stats</a><br/><br/>
                 &raquo; <a href="index.php?logout='1'" style="color: red;">logout</a>
                 <?php
             }else{
