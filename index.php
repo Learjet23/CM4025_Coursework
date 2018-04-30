@@ -41,11 +41,16 @@ $username = $_SESSION['username'];
         <script>
             index.php.getElementById('buy').onClick = function(){
                 <?php
-                $cost = 100 - $users['HP'];
-                $get_health = "UPDATE users SET HP = HP + $cost WHERE iduser='".$users['iduser']."'";
-                $update_xp = "UPDATE users SET XP = XP - $cost WHERE iduser='".$users['iduser']."'";
-                mysqli_query($db, $get_health);
-                mysqli_query($db, $update_xp);
+                if($users['HP'] == 100){
+                    echo "<br/>You already have max HP";
+                }else{
+                    $cost = 100 - $users['HP'];
+                    $get_health = "UPDATE users SET HP = HP + $cost WHERE iduser='".$users['iduser']."'";
+                    $update_xp = "UPDATE users SET XP = XP - $cost WHERE iduser='".$users['iduser']."'";
+                    mysqli_query($db, $get_health);
+                    mysqli_query($db, $update_xp);
+                    echo "<br/>Health replenished";
+                }
                 ?>
             };
         </script>
