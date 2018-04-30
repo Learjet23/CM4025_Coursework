@@ -11,7 +11,6 @@ $pwd = 'Admin_123';
 $data = 'wizard';
 
 date_default_timezone_set('Europe/London');
-$current_date = date('d/m/y');
 
 $db = mysqli_connect($host, $usr, $pwd, $data);
 
