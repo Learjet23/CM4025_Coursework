@@ -1,0 +1,50 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: scott
+ * Date: 30/04/2018
+ * Time: 11:22
+ */
+session_start();
+include ("header.php");
+if(!isset($_SESSION['username'])){
+    echo "You must be logged in to view this page";
+}else{
+    if(isset($_POST['avada'])){
+        $id = $_POST['id'];
+
+        $usr_check_sql = "SELECT * FROM users WHERE iduser='".$id."'";
+        $usr_check = mysqli_query($db, $usr_check_sql);
+        if(mysqli_num_rows($usr_check) == 0){
+            echo "user does not exist";
+        }else{
+            $enemy_stats = mysqli_fetch_assoc($usr_check);
+            if($enemy_stats['HP'] == 0) {
+                echo "User has no health and cannot be attacked";
+            }else{
+                $chance = rand(1,100);
+                if($chance > 25){
+                    echo "attack missed!";
+                    $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
+                    mysqli_query($db, $log_sql);
+                }else{
+                    $damage = $spells['avada'];
+                    $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
+                    mysqli_query($attack_sql);
+                    $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
+                    mysqli_query($db, $log_sql);
+                }
+            }
+        }
+    }elseif (isset($_POST['crucio'])){
+
+    }elseif (isset($_POST['flipendo'])){
+
+    }elseif (isset($_POST['expel'])){
+
+    }else{
+        echo "you should not be here";
+    }
+}
+
+include ('footer.php');

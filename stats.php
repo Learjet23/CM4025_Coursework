@@ -38,7 +38,10 @@ if(!isset($_SESSION['username'])){
             ?>
             <i>Attacks on <?php $usr_check_get['username']; ?> in last two minutes: (<?php echo mysqli_num_rows($duel_check) ?>/2)</i>
             <form action="duel.php" method="post">
-                <input type="submit" name="Duel" value="Duel">
+                <input type="submit" name="avada" value="Avada Kedavra">
+                <input type="submit" name="crucio" value="Crucio">
+                <input type="submit" name="flipendo" value="Flipendo">
+                <input type="submit" name="expel" value="Expelliarmous">
                 <input type="hidden" name="id" value="<?php echo $id; ?>"
             </form>
             <?php
