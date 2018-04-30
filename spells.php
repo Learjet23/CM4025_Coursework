@@ -34,6 +34,13 @@ if(!isset($_SESSION['username'])){
             <td><i><?php echo $usr_spell['avada'];?></i></td>
         </tr>
     </table>
+    <h2>Replenish spells (cost 150XP to max PP)</h2>
+    <form    action="shop.php" method="post">
+        <input type="submit" name="avada" value="Avada Kedavra">
+        <input type="submit" name="crucio" value="Crucio">
+        <input type="submit" name="flipendo" value="Flipendo">
+        <input type="submit" name="expel" value="Expelliarmous">
+    </form>
     <?php
 }
 

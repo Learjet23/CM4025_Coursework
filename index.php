@@ -37,7 +37,7 @@ $username = $_SESSION['username'];
     </tr>
     <tr>
         <td>Replenish health (cost 1XP per HP): </td>
-        <td><form action="health.php" method="post"><input type="submit" name="buy" value="Buy"></form></td>
+        <td><form action="shop.php" method="post"><input type="submit" name="hp" value="Buy"></form></td>
     </tr>
 
 </table>
