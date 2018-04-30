@@ -42,7 +42,7 @@ if(!isset($_SESSION['username'])){
                 <input type="submit" name="crucio" value="Crucio">
                 <input type="submit" name="flipendo" value="Flipendo">
                 <input type="submit" name="expel" value="Expelliarmous">
-                <input type="hidden" name="id" value="<?php echo $id; ?>"
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
             </form>
             <?php
         }
