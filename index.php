@@ -35,6 +35,22 @@ $username = $_SESSION['username'];
         <td>XP: </td>
         <td><i><?php echo $users['XP'];?></i></td>
     </tr>
+    <tr>
+        <td>Replenish health (cost 1XP per HP): </td>
+        <td><input type="button" name="buy" value="Buy"></td>
+        <script>
+            index.php.getElementById('buy').onClick = function(){
+                <?php
+                $cost = 100 - $users['HP'];
+                $get_health = "UPDATE users SET HP = HP + $cost WHERE iduser='".$users['iduser']."'";
+                $update_xp = "UPDATE users SET XP = XP - $cost WHERE iduser='".$users['iduser']."'";
+                mysqli_query($db, $get_health);
+                mysqli_query($db, $update_xp);
+                ?>
+            };
+        </script>
+    </tr>
+
 </table>
 <?php
 include ("footer.php");
