@@ -64,8 +64,12 @@ if(isset($_POST['login_user'])){
         $password = md5($password);
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $result = mysqli_query($db, $query);
-        header('location: index.php');
-    }else{
-        array_push($errors, "Wrong username and password combination");
+        if(mysqli_num_rows($result) == 1){
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now logged in!";
+            header('location: index.php');
+        }else{
+            array_push($errors, "Wrong username and password combination");
+        }
     }
 }
