@@ -25,6 +25,23 @@ if(!isset($_SESSION['username'])){
             <br/>
             <?php
             echo $usr_check_get['username'];
+            ?>
+            <br/><br/>
+            <h>Rank: <?php echo $usr_check_get['rank']; ?></h>
+            <br/>
+            <h>XP: <?php echo $usr_check_get['XP']; ?></h>
+            <br/>
+            <br/>
+            <?php
+                $duel_check_sql = "SELECT id FROM logs WHERE attackid='".$users['iduser']."' AND defendid='".$id."'";
+                $duel_check = mysqli_query($db, $duel_check_sql);
+            ?>
+            <i>Attacks on <?php $usr_check_get['username']; ?> in last two minutes: (<?php echo mysqli_num_rows($duel_check) ?>/2)</i>
+            <form action="duel.php" method="post">
+                <input type="submit" name="Duel" value="Duel">
+                <input type="hidden" name="id" value="<?php echo $id; ?>"
+            </form>
+            <?php
         }
     }
 }
