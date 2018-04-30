@@ -13,7 +13,7 @@ if(!isset($_SESSION['username'])){
     if(!isset($_GET['id'])){
         echo "YOU SHOULD NOT BE HERE";
     }else{
-        $id = protect($_GET['id']);
+        $id = $_GET['id'];
         $usr_check_sql = "SELECT * FROM users WHERE iduser='". $id ."'";
         $usr_check = mysqli_query($db, $usr_check_sql);
         if(mysqli_num_rows($usr_check) == 0){
