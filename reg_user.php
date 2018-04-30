@@ -80,6 +80,7 @@ if(isset($_POST['login_user'])){
             }
         }else{
             array_push($errors, "Wrong username and password combination");
+            header('location: index.php');
         }
     }
 }
