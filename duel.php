@@ -15,8 +15,10 @@ if(!isset($_SESSION['username'])){
 
         $usr_check_sql = "SELECT * FROM users WHERE iduser='".$id."'";
         $usr_check = mysqli_query($db, $usr_check_sql);
-        if(mysqli_num_rows($usr_check) == 0){
+        if(mysqli_num_rows($usr_check) == 0) {
             echo "user does not exist";
+        }elseif ($id == $users['iduser']){
+            echo "You cannot attack yourself!";
         }else{
             $enemy_stats = mysqli_fetch_assoc($usr_check);
             if($enemy_stats['HP'] == 0) {
