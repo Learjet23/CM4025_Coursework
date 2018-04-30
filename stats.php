@@ -7,29 +7,22 @@
  */
 session_start();
 include ("header.php");
-$username = $_SESSION['username'];
 if(!isset($_SESSION['username'])){
     echo "You must be logged in to view this page";
 }else{
-    ?>
-    <h2>Your Stats</h2>
-    <br/>
-    <table>
-        <tr>
-            <td>Username: </td>
-            <td><i><?php echo $username;?></i></td>
-        </tr>
-        <tr>
-            <td>HP: </td>
-            <td><i><?php echo $users['HP'];?></i></td>
-        </tr>
-        <tr>
-            <td>XP: </td>
-            <td><i><?php echo $users['XP'];?></i></td>
-        </tr>
+    if(!isset($_GET['id'])){
+        output("YOU SHOULD NOT BE HERE");
+    }else{
+        $id = protect($_GET['id']);
+        $usr_check_sql = "SELECT * FROM users WHERE iduser='". $id ."'";
+        $usr_check = mysqli_query($db, $usr_check_sql);
+        if(mysqli_num_rows($usr_check) == 0){
+            output("NO USER WITH THIS ID");
+        }else{
 
-    </table>
-<?php
+
+        }
+    }
 }
 
 include ("footer.php");
