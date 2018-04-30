@@ -26,7 +26,7 @@ include ('header.php');
         echo "<td><a href=\"stats.php?id=" . $get_rank['iduser']. "\">" . $get_rank['username'] . "</a></td>";
         echo "<td>" . $get_rank['XP'] . "</td>";
     echo "</tr>";
-    $set_rank_sql = "INSERT INTO users (rank) VALUE ($count)";
+    $set_rank_sql = "INSERT INTO users (rank) VALUE ($count) WHERE iduser='".$get_rank['iduser']."'";
     mysqli_query($db, $set_rank_sql);
     $count++;
     }
