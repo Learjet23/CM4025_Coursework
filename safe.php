@@ -27,6 +27,7 @@ $expel_sql = "SELECT * FROM spells WHERE name='Expelliarmous'";
 $expel_get = mysqli_query($db, $expel_sql);
 $expel = mysqli_fetch_assoc($expel_get);
 
-$usr_spell_sql = "SELECT * FROM usr_spells WHERE iduser='".$users['iduser']."'";
+$usr_spell_sql = "SELECT PP FROM usr_spells WHERE iduser='".$users['iduser']."'";
 $usr_spell_get = mysqli_query($db, $usr_spell_sql);
 $usr_spell = mysqli_fetch_assoc($usr_spell_get);
+
