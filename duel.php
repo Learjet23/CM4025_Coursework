@@ -29,7 +29,7 @@ if(!isset($_SESSION['username'])){
                     mysqli_query($db, $log_sql);
                     header('location: stats.php?id=' . $id);
                 }else{
-                    $damage = $spells['avada'];
+                    $damage = $spells['Avada Kedavra'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
@@ -63,7 +63,7 @@ if(!isset($_SESSION['username'])){
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    $damage = $spells['avada'];
+                    $damage = $spells['Crucio'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
@@ -97,7 +97,7 @@ if(!isset($_SESSION['username'])){
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    $damage = $spells['avada'];
+                    $damage = $spells['Flipendo'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
@@ -131,7 +131,7 @@ if(!isset($_SESSION['username'])){
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
                 }else{
-                    $damage = $spells['avada'];
+                    $damage = $spells['Expelliarmous'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
                     mysqli_query($attack_sql);
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '$damage', '".$usr_check['HP']."','".time()."')";
