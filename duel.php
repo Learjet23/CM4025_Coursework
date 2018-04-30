@@ -27,6 +27,7 @@ if(!isset($_SESSION['username'])){
                     echo "attack missed!";
                     $log_sql = "INSERT INTO logs (attackid, defenceid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '".$id."', '0', '".$usr_check['HP']."','".time()."')";
                     mysqli_query($db, $log_sql);
+                    header('location: stats.php?id=' . $id);
                 }else{
                     $damage = $spells['avada'];
                     $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
