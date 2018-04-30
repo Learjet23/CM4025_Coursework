@@ -35,16 +35,23 @@ if(!isset($_SESSION['username'])){
             <?php
                 $duel_check_sql = "SELECT id FROM logs WHERE attackid='".$users['iduser']."' AND defendid='".$id."'";
                 $duel_check = mysqli_query($db, $duel_check_sql);
+                $duel_num = mysqli_num_rows($duel_check);
             ?>
-            <i>Attacks on <?php $usr_check_get['username']; ?> in last two minutes: (<?php echo mysqli_num_rows($duel_check) ?>/2)</i>
-            <form action="duel.php" method="post">
-                <input type="submit" name="avada" value="Avada Kedavra">
-                <input type="submit" name="crucio" value="Crucio">
-                <input type="submit" name="flipendo" value="Flipendo">
-                <input type="submit" name="expel" value="Expelliarmous">
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
-            </form>
+            <i>Attacks on <?php $usr_check_get['username']; ?> in last two minutes: (<?php echo $duel_num ?>/2)</i>
             <?php
+            if($duel_num < 2){
+            ?>
+                <form action="duel.php" method="post">
+                    <input type="submit" name="avada" value="Avada Kedavra">
+                    <input type="submit" name="crucio" value="Crucio">
+                    <input type="submit" name="flipendo" value="Flipendo">
+                    <input type="submit" name="expel" value="Expelliarmous">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                </form>
+            <?php
+            }else{
+                echo "You have attacked this user too many times";
+            }
         }
     }
 }
