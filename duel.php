@@ -32,7 +32,7 @@ if(!isset($_SESSION['username'])){
                     if($usr_spell['avada'] >= 1){
                         $damage = $avada['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                        $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Avada Kedavra'";
+                        $attack_used = "UPDATE usr_spells SET avada=avada-1 WHERE iduser='".$users['iduser']."'";
                         mysqli_query($db, $attack_sql);
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
@@ -73,7 +73,7 @@ if(!isset($_SESSION['username'])){
                     if($usr_spell['crucio'] >= 1){
                         $damage = $crucio['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                        $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Crucio'";
+                        $attack_used = "UPDATE usr_spells SET crucio=crucio-1 WHERE iduser='".$users['iduser']."'";
                         mysqli_query($db, $attack_sql);
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
@@ -114,7 +114,7 @@ if(!isset($_SESSION['username'])){
                     if($usr_spell['flip'] >= 1){
                         $damage = $flip['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                        $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Flipendo'";
+                        $attack_used = "UPDATE usr_spells SET flip=flip-1 WHERE iduser='".$users['iduser']."'";
                         mysqli_query($db, $attack_sql);
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
@@ -155,7 +155,7 @@ if(!isset($_SESSION['username'])){
                     if($usr_spell['expel'] >= 1){
                         $damage = $expel['damage'];
                         $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                        $attack_used = "UPDATE usr_spells SET PP=PP-1 WHERE name='Expelliarmous'";
+                        $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
                         mysqli_query($db, $attack_sql);
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."','$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
