@@ -23,7 +23,6 @@ include ('header.php');
     while ($get_rank = mysqli_fetch_assoc($get_rank_db)){
     echo "<tr>";
         echo "<td>" . $count . "</td>";
-        echo "<td>" . $get_rank['username'] . "</td>";
         echo "<td><a href=\"stats.php?id=" . $get_rank['iduser']. "\">" . $get_rank['username'] . "</a></td>";
         echo "<td>" . $get_rank['XP'] . "</td>";
     echo "</tr>";
