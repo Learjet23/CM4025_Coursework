@@ -185,7 +185,8 @@ if(!isset($_SESSION['username'])){
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('" . $users['iduser'] . "','$id', '$damage', '" . $enemy_stats['HP'] . "','" . time() . "')";
                         mysqli_query($db, $log_sql);
-                        $enemy_stats2 = mysqli_fetch_assoc($usr_check);
+                        $usr_check2 = mysqli_query($db, $usr_check_sql);
+                        $enemy_stats2 = mysqli_fetch_assoc($usr_check2);
                         if ($enemy_stats2['HP'] == 0) {
                             echo "Enemy defeated! +100 XP";
                             $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
