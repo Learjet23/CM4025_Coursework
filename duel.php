@@ -86,6 +86,7 @@ if(!isset($_SESSION['username'])){
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
                         mysqli_query($db, $log_sql);
+                        $enemy_stats = mysqli_fetch_assoc($usr_check);
                         //echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
                         if ($enemy_stats['HP'] == 0) {
                             echo "Enemy defeated! +100 XP";
