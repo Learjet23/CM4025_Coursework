@@ -27,6 +27,8 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $avada['chance']){
                     echo "attack missed!";
+                    $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
+                    mysqli_query($db, $attack_used);
                 }else{
                     if($usr_spell['avada'] >= 1){
                         $damage = $avada['damage'];
@@ -68,6 +70,8 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $crucio['chance']){
                     echo "attack missed!";
+                    $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
+                    mysqli_query($db, $attack_used);
                 }else{
                     if($usr_spell['crucio'] >= 1){
                         $damage = $crucio['damage'];
@@ -109,6 +113,8 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $flip['chance']){
                     echo "attack missed!";
+                    $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
+                    mysqli_query($db, $attack_used);
                 }else{
                     if($usr_spell['flip'] >= 1){
                         $damage = $flip['damage'];
@@ -150,6 +156,8 @@ if(!isset($_SESSION['username'])){
                 $chance = rand(1,100);
                 if($chance > $expel['chance']){
                     echo "attack missed!";
+                    $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
+                    mysqli_query($db, $attack_used);
                 }else{
                     if($usr_spell['expel'] >= 1){
                         $damage = $expel['damage'];
