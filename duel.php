@@ -38,11 +38,16 @@ if(!isset($_SESSION['username'])){
                         mysqli_query($db, $attack_used);
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
                         mysqli_query($db, $log_sql);
-                        if($enemy_stats['HP'] == 0){
-                            echo "Enemy defeated";
-                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='".$users['iduser']."'";
+                        if ($enemy_stats['HP'] == 0) {
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
                             mysqli_query($db, $xp_update);
-                            header('location: stats.php?id=' . $id);
+                        }elseif($enemy_stats['HP'] < 0){
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            $hp_update = "UPDATE users SET HP=0 WHERE iduser='" . $id . "'";
+                            mysqli_query($db, $xp_update);
+                            mysqli_query($db, $hp_update);
                         }else{
                             header('location: stats.php?id=' . $id);
                         }
@@ -82,10 +87,16 @@ if(!isset($_SESSION['username'])){
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
                         mysqli_query($db, $log_sql);
                         //echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
-                        if($enemy_stats['HP'] == 0){
-                            echo "Enemy defeated";
-                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='".$users['iduser']."'";
-                            header('location: stats.php?id=' . $id);
+                        if ($enemy_stats['HP'] == 0) {
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            mysqli_query($db, $xp_update);
+                        }elseif($enemy_stats['HP'] < 0){
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            $hp_update = "UPDATE users SET HP=0 WHERE iduser='" . $id . "'";
+                            mysqli_query($db, $xp_update);
+                            mysqli_query($db, $hp_update);
                         }else{
                             header('location: stats.php?id=' . $id);
                         }
@@ -125,10 +136,16 @@ if(!isset($_SESSION['username'])){
                         $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."', '$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
                         mysqli_query($db, $log_sql);
                         //echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
-                        if($enemy_stats['HP'] == 0){
-                            echo "Enemy defeated";
-                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='".$users['iduser']."'";
-                            header('location: stats.php?id=' . $id);
+                        if ($enemy_stats['HP'] == 0) {
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            mysqli_query($db, $xp_update);
+                        }elseif($enemy_stats['HP'] < 0){
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            $hp_update = "UPDATE users SET HP=0 WHERE iduser='" . $id . "'";
+                            mysqli_query($db, $xp_update);
+                            mysqli_query($db, $hp_update);
                         }else{
                             header('location: stats.php?id=' . $id);
                         }
@@ -159,19 +176,25 @@ if(!isset($_SESSION['username'])){
                     $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
                     mysqli_query($db, $attack_used);
                 }else{
-                    if($usr_spell['expel'] >= 1){
+                    if($usr_spell['expel'] >= 1) {
                         $damage = $expel['damage'];
-                        $attack_sql = "UPDATE users SET HP=HP-'".$damage."' WHERE iduser='".$id."'";
-                        $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='".$users['iduser']."'";
+                        $attack_sql = "UPDATE users SET HP=HP-'" . $damage . "' WHERE iduser='" . $id . "'";
+                        $attack_used = "UPDATE usr_spells SET expel=expel-1 WHERE iduser='" . $users['iduser'] . "'";
                         mysqli_query($db, $attack_sql);
                         mysqli_query($db, $attack_used);
-                        $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('".$users['iduser']."','$id', '$damage', '".$enemy_stats['HP']."','".time()."')";
+                        $log_sql = "INSERT INTO logs (attackid, defendid, att_dam, def_hp, time) VALUES ('" . $users['iduser'] . "','$id', '$damage', '" . $enemy_stats['HP'] . "','" . time() . "')";
                         mysqli_query($db, $log_sql);
                         //echo "Attack hit! " . $enemy_stats['username'] . " has " . $enemy_stats['HP'] . " HP left.";
-                        if($enemy_stats['HP'] == 0){
-                            echo "Enemy defeated";
-                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='".$users['iduser']."'";
-                            header('location: stats.php?id=' . $id);
+                        if ($enemy_stats['HP'] == 0) {
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            mysqli_query($db, $xp_update);
+                        }elseif($enemy_stats['HP'] < 0){
+                            echo "Enemy defeated! +100 XP";
+                            $xp_update = "UPDATE users SET XP=XP + 100 WHERE iduser='" . $users['iduser'] . "'";
+                            $hp_update = "UPDATE users SET HP=0 WHERE iduser='" . $id . "'";
+                            mysqli_query($db, $xp_update);
+                            mysqli_query($db, $hp_update);
                         }else{
                             header('location: stats.php?id=' . $id);
                         }
